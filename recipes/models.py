@@ -1,14 +1,15 @@
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
+
 
 # Create your models here.
-class Category(models.Model):
+class Category(models.Model): # noqa: E302, E261   
     name = models.CharField(max_length=65)
 
     def __str__(self):
-        return self.name
-    
-class Recipe(models.Model):
+        return self.name   
+       
+class Recipe(models.Model): # noqa: E302,E261
     # EDITED
     # title description slug
     title = models.CharField(max_length=65)
@@ -37,7 +38,7 @@ class Recipe(models.Model):
     is_published = models.BooleanField(default=False)
     
     # cover
-    cover = models.ImageField(upload_to='recipes/covers/%Y/%m/%d/', blank=True, default='')
+    cover = models.ImageField(upload_to='recipes/covers/%Y/%m/%d/', blank=True, default='') # noqa: E501,E261
     
     # category (relação)
     category = models.ForeignKey(

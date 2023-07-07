@@ -18,8 +18,8 @@ def category(request, category_id):
 
     recipes = get_list_or_404(
         Recipe.objects.filter(
-        category__id=category_id,
-        is_published=True,
+            category__id=category_id,
+            is_published=True,
         ).order_by('-id')
     )
 
